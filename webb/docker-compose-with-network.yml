@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  apache:
+    image: kujiy/php-rewrite
+    ports:
+      - 8002:80
+    volumes:
+      - ./html:/var/www/html
+    networks:
+      default:
+        ipv4_address: 172.27.27.200
+
+networks:
+  default:
+    external: 
+      name: my_network
+ 
+    

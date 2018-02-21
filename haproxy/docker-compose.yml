@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  haproxy:
+    image: haproxy
+    container_name: "haproxy"
+    ports:
+      - 80:80
+      - 9000:9000
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+     
+# docker network create my_network --subnet 172.27.27.0/24 --ip-range 172.27.27.0/24 --gateway 172.27.27.1 
