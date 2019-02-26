@@ -16,12 +16,18 @@ http://${IP}:8002/
 http://${IP}:9000/
 http://${IP}/
 
+##
+docker inspect weba_apache_1 | grep IPAddress
+docker inspect webb_apache_1 | grep IPAddress
+docker inspect haproxy | grep IPAddress
+
 docker network create my_network --subnet 172.27.27.0/24 --ip-range 172.27.27.0/24 --gateway 172.27.27.1
 
 docker network ls
 
 docker network inspect my_network
 
+##
 cd weba
 docker-compose -f docker-compose-with-network.yml up -d --force-recreate
 
